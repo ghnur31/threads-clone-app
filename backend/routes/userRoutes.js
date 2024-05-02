@@ -3,7 +3,7 @@ const { signupUser, loginUser, followUnFollowUser, updateUser, getUserProfile, l
 const router = express.Router();
 const protectRoute = require("../middlewares/protectRoute");
 
-router.get('/profile/:username', getUserProfile);
+router.get('/profile/:query', getUserProfile);
 router.post('/signup', signupUser);
 router.post('/login', loginUser);
 router.post('/logout', logoutUser);
