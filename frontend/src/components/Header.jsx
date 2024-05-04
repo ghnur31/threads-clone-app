@@ -47,7 +47,7 @@ const Header = () => {
       )}
 
       {!user && (
-        <Link as={RouterLink} onClick={() => setAuthScreen("signup")}>
+        <Link to={"/Auth"} as={RouterLink} onClick={() => setAuthScreen("signup")}>
           Sign up
         </Link>
       )}
