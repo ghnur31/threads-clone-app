@@ -1,10 +1,10 @@
 const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 5000;
 const connectDB = require("./db/connectDB");
 const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
+const PORT = process.env.PORT || 5000;
 const cloudinary = require("cloudinary").v2;
+const {app, server} = require("./socket/socket");
 
 dotenv.config();
 connectDB();
@@ -28,7 +28,6 @@ app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/posts", require("./routes/postRoutes"));
 app.use("/api/messages", require("./routes/messageRoutes"));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port http://localhost:${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Server is running on port http://localhost:${PORT}`);
 });
-
